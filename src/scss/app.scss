@@ -1,0 +1,28 @@
+@import "blocks/all";
+@import "./patterns/index";
+
+body {
+  background-color: $dark-blue;
+  color: $dark-gray;
+  font-family: 'PT Mono', monospace, 'Roboto', sans-serif;
+  position: relative;
+  margin: 0 auto;
+}
+
+.wrapper {
+  max-width: 1200px;
+  min-width: 320px;
+  margin: 0 auto;
+  flex-direction: column;
+  @include flex-center;
+  min-height: 100vh;
+
+  .content {
+    width: 100%;
+    margin-top: 40px;
+  }
+}
+
+a {
+  transition: color ease-in-out 0.2s;
+}
