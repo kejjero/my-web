@@ -1,0 +1,53 @@
+@import "./src/scss/patterns/index";
+
+.header {
+  width: 100%;
+  min-height: 90px;
+  box-sizing: border-box;
+  @include flex-center-between;
+
+  img {
+    width: 160px;
+    cursor: pointer;
+  }
+
+  nav {
+    @include flex-center-between;
+    gap: 30px;
+
+    ul {
+      @include reset;
+      list-style: square;
+      gap: 50px;
+      display: flex;
+
+      li {
+        color: #4B98F2;
+
+        a {
+          @include reset;
+          text-decoration: none;
+          font-family: 'PT Mono', monospace;
+          font-style: normal;
+          font-weight: 400;
+          font-size: 14px;
+          letter-spacing: 0.05em;
+          color: $white-gray;
+          cursor: pointer;
+          &:hover {
+            color: $main-blue;
+          }
+
+          &:active {
+            color: $main-blue;
+          }
+        }
+      }
+    }
+  }
+
+  a {
+    @include reset;
+    text-decoration: none;
+  }
+}

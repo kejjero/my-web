@@ -1,0 +1,76 @@
+@import "src/scss/patterns/index";
+
+.footer {
+  @include flex-center-between;
+  z-index: 100;
+  bottom: 0;
+  width: 100%;
+  max-width: 1200px;
+  position: fixed;
+
+  .line {
+    position: absolute;
+    bottom: 0;
+    width: 1px;
+    height: 80px;
+    background-color: $white-blue;
+  }
+
+  &__network {
+    display: flex;
+    @include flex-center-center;
+
+    ul {
+      @include reset-list;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      margin: 0 0 85px;
+
+      li {
+        width: 30px;
+        height: 30px;
+        cursor: pointer;
+        @include flex-center-center;
+
+        svg {
+          path {
+            transition: fill-opacity ease-in-out 0.2s;
+          }
+          &:hover path {
+            fill: $main-blue;
+            fill-opacity: 1;
+          }
+        }
+      }
+    }
+  }
+
+  &__mail {
+    position: relative;
+    right: 0;
+    bottom: -150px;
+    margin-right: 20px;
+
+
+   em {
+     opacity: 0.3;
+     position: absolute;
+     right: -85px;
+     bottom: 170px;
+     letter-spacing: 0.9px;
+     @include reset;
+     font-size: 14px;
+     font-style: normal;
+     transform: rotate(90deg);
+     transition: opacity ease-in-out 0.2s;
+     color: $main-blue;
+     cursor: pointer;
+
+     &:hover {
+       color: $main-blue;
+       opacity: 1;
+     }
+   }
+  }
+}
