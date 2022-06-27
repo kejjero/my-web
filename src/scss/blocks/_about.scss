@@ -15,9 +15,11 @@
   position: absolute;
   left: 100px;
 }
+
 #section03 a {
   padding-top: 60px;
 }
+
 #section03 a span {
   position: absolute;
   top: 0;
@@ -29,6 +31,7 @@
   border-radius: 100%;
   box-sizing: border-box;
 }
+
 #section03 a span::after {
   position: absolute;
   top: 50%;
@@ -43,6 +46,7 @@
   transform: rotate(-45deg);
   box-sizing: border-box;
 }
+
 #section03 a span::before {
   position: absolute;
   top: 0;
@@ -51,13 +55,14 @@
   content: '';
   width: 44px;
   height: 44px;
-  box-shadow: 0 0 0 0 rgba(255,255,255,.1);
+  box-shadow: 0 0 0 0 rgba(255, 255, 255, .1);
   border-radius: 100%;
   opacity: 0;
   -webkit-animation: sdb03 2s infinite;
   animation: sdb03 2s infinite;
   box-sizing: border-box;
 }
+
 @-webkit-keyframes sdb03 {
   0% {
     opacity: 0;
@@ -66,13 +71,14 @@
     opacity: 1;
   }
   60% {
-    box-shadow: 0 0 0 30px rgba(255,255,255,.1);
+    box-shadow: 0 0 0 30px rgba(255, 255, 255, .1);
     opacity: 0;
   }
   100% {
     opacity: 0;
   }
 }
+
 @keyframes sdb03 {
   0% {
     opacity: 0;
@@ -81,7 +87,7 @@
     opacity: 1;
   }
   60% {
-    box-shadow: 0 0 0 30px rgba(255,255,255,.1);
+    box-shadow: 0 0 0 30px rgba(255, 255, 255, .1);
     opacity: 0;
   }
   100% {
@@ -89,33 +95,62 @@
   }
 }
 
+.paragraph {
+  @include reset;
+  font-family: 'PT Mono', serif;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 23px;
+  letter-spacing: 0.01em;
+}
+
 .about {
   padding: 0 100px 0 100px;
   margin: 0 auto;
   flex-direction: column;
-  @include flex-center-center;
+  @include flex-center;
 
   .welcome {
     width: 100%;
     @include flex-center-between;
+    align-items: flex-start;
     gap: 10px;
-    min-height: 100vh;
     flex-wrap: wrap;
 
-    &__button-wrapper{
+    border-bottom: 5px dotted #233554;
+    padding-bottom: 100px;
+
+    &__button-wrapper {
       margin-top: 100px;
       width: 100%;
 
       position: relative;
     }
 
-    img {
+    &__image {
       width: 450px;
+      animation: gravity 3s infinite ease-in-out;
+    }
+
+    @keyframes gravity {
+      0% {
+        transform: translateY(0);
+      }
+
+      50% {
+        transform: translateY(20px);
+      }
+
+      100% {
+        transform: translateY(0);
+      }
+
     }
 
     &__text-wrapper {
       width: 100%;
       max-width: 450px;
+      margin-top: 50px;
 
       h2 {
         @include reset;
@@ -144,7 +179,7 @@
           font-family: 'Roboto', serif;
           font-style: normal;
           font-weight: 400;
-          font-size: 22px;
+          font-size: 20px;
           line-height: 32px;
           letter-spacing: 0.01em;
           color: $white-gray;
@@ -154,11 +189,13 @@
           @include reset;
           list-style-type: square;
           margin-left: 12px;
+
           li {
             @include reset;
             color: $white-gray;
             font-size: 16px;
             line-height: 25px;
+
             &::marker {
               color: $main-blue;
             }
@@ -189,6 +226,7 @@
         border-radius: 8px;
       }
 
+
       span {
         width: 230px;
         height: 230px;
@@ -197,7 +235,6 @@
         right: 0;
         border: 2px solid $main-blue;
         border-radius: 8px;
-
       }
     }
 
@@ -208,16 +245,6 @@
       display: flex;
       flex-direction: column;
       gap: 10px;
-
-      p {
-        @include reset;
-        font-family: 'PT Mono', serif;
-        font-weight: 400;
-        font-size: 16px;
-        line-height: 23px;
-        letter-spacing: 0.01em;
-      }
-
     }
   }
 
@@ -252,6 +279,7 @@
       width: 100%;
       z-index: 100;
     }
+
     &__image {
       max-height: 500px;
     }
@@ -263,6 +291,47 @@
       font-size: 18px;
       font-weight: 400;
       color: $white-gray;
+    }
+  }
+
+  .desc {
+    align-self: flex-end;
+    margin-bottom: 80px;
+    max-width: 560px;
+
+    &__text {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+
+    &__buttons-box {
+      display: flex;
+      gap: 10px;
+      margin-top: 20px;
+    }
+  }
+
+  .arts {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    margin: 100px 0;
+
+    &__grid {
+      display: grid;
+      grid-template-columns: 1fr 150px 150px 1fr;
+      grid-template-rows: 185px 185px;
+      gap: 10px;
+      grid-template-areas:
+    ". . . ."
+    ". rect rect .";
+      background-color: #fff;
+    }
+
+    .rect {
+      grid-area: rect;
+
     }
   }
 }

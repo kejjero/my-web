@@ -3,6 +3,9 @@ import {Button} from "@mui/material";
 import {Link} from "react-router-dom";
 
 function Header() {
+
+    // const [activeIndex, setActiveIndex] = null;
+
     return (
         <header className="header">
             <Link to='/'>

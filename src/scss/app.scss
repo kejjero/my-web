@@ -15,7 +15,7 @@ body {
   margin: 0 auto;
   flex-direction: column;
   @include flex-center;
-  min-height: 100vh;
+  min-height: 100.05vh;
 
   .content {
     width: 100%;

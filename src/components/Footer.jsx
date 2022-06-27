@@ -59,7 +59,7 @@ function Footer() {
             <div className="footer__mail">
                 <span className="line">
                 </span>
-                <em>kejerino@yandex.ru</em>
+                <em>kejeroarts@yandex.ru</em>
             </div>
         </footer>
     )
