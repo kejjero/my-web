@@ -1,12 +1,12 @@
 import {Button} from "@mui/material";
 import SendIcon from '@mui/icons-material/Send';
 import intro from '../images/intro.svg'
-import { SnackbarProvider, useSnackbar } from 'notistack';
+import {useSnackbar } from 'notistack';
 
 function Home() {
     const { enqueueSnackbar } = useSnackbar();
     const coppyWriteText = () => {
-        navigator.clipboard.writeText('kejerino@yandex.ru')
+        navigator.clipboard.writeText('kejeroarts@yandex.ru')
     }
 
     const handleClickVariant = (variant) => async () => {
