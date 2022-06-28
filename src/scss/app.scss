@@ -9,6 +9,10 @@ body {
   margin: 0 auto;
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
 .wrapper {
   max-width: 1200px;
   min-width: 320px;

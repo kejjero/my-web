@@ -1,4 +1,3 @@
-import info from "../images/info.jpeg"
 import {Swiper, SwiperSlide} from 'swiper/react';
 import {Autoplay, Manipulation, Navigation, Pagination} from 'swiper'
 import 'swiper/css';
@@ -8,16 +7,16 @@ import slideUi from '../images/about-3.svg'
 import welcomeImage from '../images/welcome.svg'
 import 'swiper/css/navigation';
 import 'swiper/css/pagination';
-import {Chip, Grid, Paper, styled} from "@mui/material";
-import GitHubIcon from "@mui/icons-material/GitHub";
-import LinkIcon from "@mui/icons-material/Link";
+import stats1 from '../images/stats/who-people.webp'
+import stats2 from '../images/stats/who-awards.webp'
+import stats3 from '../images/stats/fundraise.webp'
 
 function About() {
 
     const items = [
-        {image: slideArt, title: 'развиваю себя как цифрового художника'},
-        {image: slideUi, title: 'практикуюсь в создании UX/UI дизайна'},
-        {image: slideVector, title: 'создаю векторные иллюстрации'},
+        {image: slideArt, title: 'Развиваю себя как цифрового художника'},
+        {image: slideUi, title: 'Практикуюсь в создании UX/UI дизайна'},
+        {image: slideVector, title: 'Создаю векторные иллюстрации'},
     ]
 
 
@@ -30,7 +29,7 @@ function About() {
                              alignItems: 'center',
                              justifyContent: 'center'
                          }}>
-                <h4 className="slider__subtitle">{item.title}</h4>
+                <h3 className="slider__title">{item.title}</h3>
                 <img className="slider__image" src={item.image} alt={item.title}/>
             </SwiperSlide>
         )
@@ -42,96 +41,86 @@ function About() {
             <section className="welcome">
                 <div className="welcome__text-wrapper">
                     <h2>Привет, друг!</h2>
-                    <em className="subtitle">Я креативный веб-разработчик из Сибири 🎨
-                        <h3>Создаю сайты:</h3>
-                        <ul>
-                            <li>Продумываю UI дизайн</li>
-                            <li>Рисую красочные иллюстрации</li>
-                            <li>Пишу качественные SPA-приложения</li>
-                        </ul>
+                    <em className="subtitle">Я креативный веб-разработчик <br/> из Сибири 🎨
                     </em>
-                    <div className="welcome__button-wrapper">
-                        <section id="section03" className="demo">
-                            <a><span></span></a>
-                        </section>
-                    </div>
+                    <button className="welcome__button" type="button">
+                        <a href="#info">
+                            <svg width="27" height="45" viewBox="0 0 27 45" fill="none"
+                                 xmlns="http://www.w3.org/2000/svg">
+                                <rect x="0.5" y="0.5" width="26" height="44" rx="13" stroke="#D9D9D9"/>
+                                <circle cx="13.5" cy="9.5" r="4.5" fill="#D9D9D9"/>
+                            </svg>
+                        </a>
+                    </button>
                 </div>
                 <img className="welcome__image" src={welcomeImage} alt=""/>
             </section>
-            <section className="info">
+            <section className="info" id="info">
                 <div className="info__box-image">
-                    <img src={info} alt="avatar"/>
-                    <span>
-                    </span>
+                    <img className="info__image x1" src="https://images7.alphacoders.com/848/thumb-1920-848894.jpg"
+                         alt=""/>
+                    <img className="info__image x2"
+                         src="https://i.pinimg.com/originals/56/d1/c2/56d1c2938b5c0155c3f5e2db030aa114.jpg" alt=""/>
+                    <img className="info__image x3" src="https://altaitop.ru/wp-content/uploads/2020/02/bajk-zim-1.jpg"
+                         alt=""/>
+                    <img className="info__image x4" src="https://i.artfile.ru/2560x1600_1272281_[www.ArtFile.ru].jpg"
+                         alt=""/>
                 </div>
                 <div className="info__box-text">
-                    <h3 className="title">Моя история</h3>
-                    <p className="paragraph">Свой путь я начинал с изучения Python, но быстро осознал, что больше ориентирован на создание
+                    <h3 className="title"><span className="cube"></span>Моя история</h3>
+                    <p className="paragraph">Свой путь я начинал с изучения Python, но быстро осознал, что больше
+                        ориентирован на создание
                         «оболочки» продукта,
                         нежели на то, что происходит «за ширмой» проекта.</p>
-                    <p className="paragraph">Свой путь я начинал с изучения Python, но быстро осознал, что больше ориентирован на создание
-                        «оболочки» продукта,
-                        нежели на то, что происходит «за ширмой» проекта.
-                        Свой путь я начинал с изучения Python, но быстро осознал, что больше ориентирован на создание
+                    <p className="paragraph">Свой путь я начинал с изучения Python, но быстро осознал, что больше
+                        ориентирован на создание
                         «оболочки» продукта,
                         нежели на то, что происходит «за ширмой» проекта.</p>
                 </div>
             </section>
             <section className="slider">
-                <h3 className="title" style={{textAlign: 'center'}}>А еще я...</h3>
-                <div className="slider__wrapper">
-                    <Swiper
-                        id="swiper"
-                        modules={[Navigation, Pagination, Autoplay, Manipulation]}
-                        autoplay={true}
-                        Manipulation
-                        loop={true}
-                    >
-                        {slides}
-                    </Swiper>
-                    <span>
+                <h3 className="title"><span className="cube">
+                </span>А еще я...</h3>
+                <div className="slider__main-box">
+                    <div className="slider__wrapper">
+                        <Swiper
+                            id="swiper"
+                            modules={[Navigation, Pagination, Autoplay, Manipulation]}
+                            autoplay={true}
+                            Manipulation
+                            loop={true}
+                        >
+                            {slides}
+                        </Swiper>
+                        <span>
                     </span>
+                    </div>
                 </div>
             </section>
-            <article className="desc">
-                <div className="desc__text">
-                    <h3 className="title">Искусство во всем</h3>
-                    <p className="paragraph">
-                        Свой путь я начинал с изучения Python, но быстро осознал, что больше ориентирован на
-                        создание «оболочки» продукта,
-                        нежели на то, что происходит «за ширмой» проекта.
-                        Свой путь я начинал с изучения Python, но быстро осознал, что больше ориентирован на
-                        создание «оболочки» продукта,
-                        нежели на то, что происходит «за ширмой» проекта.
-                    </p>
-                </div>
-                <div className="desc__buttons-box">
-                    <a className="portfolio__link" href="https://github.com/kejjero/mars-food" target="_blank">
-                        <Chip
-                            style={{cursor: "pointer"}}
-                            label="Instagram"
-                            icon={<GitHubIcon/>}
-                            variant="outlined"
-                            color="info"
-                            size="medium"
-                        />
-                    </a>
-                    <a className="portfolio__link" href="https://www.artstation.com/kejero" target="_blank">
-                        <Chip
-                            style={{cursor: "pointer"}}
-                            label="Artstation"
-                            icon={<LinkIcon/>}
-                            variant="outlined"
-                            color="secondary"
-                            size="medium"
-                        />
-                    </a>
-                </div>
-            </article>
-            <section className="arts">
-                <div className="arts__grid">
-
-                </div>
+            <section className="stats">
+                <ul className="stats__cards">
+                    <li className="stats__card">
+                        <div className="stats__image-box">
+                            <img className="stats__image" src={stats1} alt=""/>
+                        </div>
+                        <h4 className="stats__count">6</h4>
+                        <p className="stats__description"><span style={{color: '#4B98F2'}}>Web</span>-проектов</p>
+                    </li>
+                    <li className="stats__card">
+                        <div className="stats__image-box">
+                            <img className="stats__image" src={stats2} alt=""/>
+                        </div>
+                        <h4 className="stats__count">3</h4>
+                        <p className="stats__description"><span style={{color: '#4B98F2'}}>UI</span>-дизайна</p>
+                    </li>
+                    <li className="stats__card">
+                        <div className="stats__image-box">
+                            <img className="stats__image" src={stats3} alt=""/>
+                        </div>
+                        <h4 className="stats__count">8</h4>
+                        <p className="stats__description"><span style={{color: '#4B98F2'}}>CG</span>-артов</p>
+                    </li>
+                </ul>
             </section>
         </div>
     )
