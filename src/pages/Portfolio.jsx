@@ -211,10 +211,6 @@ function Portfolio() {
                                 />
                             </a>
                         </div>
-                        {/*<Fab style={{marginTop: '20px'}} variant="extended" size="medium" color="primary">*/}
-                        {/*    Подробнее*/}
-                        {/*    <KeyboardArrowRightIcon/>*/}
-                        {/*</Fab>*/}
                     </div>
                 </li>
             </ul>

@@ -24,6 +24,10 @@ html {
   .content {
     width: 100%;
     margin-top: 40px;
+
+    @media screen and (max-width: 920px) {
+      margin-top: 70px;
+    }
   }
 }
 

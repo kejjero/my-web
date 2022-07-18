@@ -2,11 +2,17 @@
 
 .footer {
   @include flex-center-between;
-  z-index: 100;
+  z-index: 90;
   bottom: 0;
   width: 100%;
   max-width: 1200px;
   position: fixed;
+
+  @media screen and (max-width: 1180px) {
+    position: relative;
+    background-color: rgba(0, 0, 0, 0.1);
+    height: 100px;
+  }
 
   .line {
     position: absolute;
@@ -14,6 +20,11 @@
     width: 1px;
     height: 80px;
     background-color: $white-blue;
+
+    @media screen and (max-width: 1180px) {
+      display: none;
+      overflow: hidden;
+    }
   }
 
   &__network {
@@ -26,6 +37,12 @@
       flex-direction: column;
       gap: 10px;
       margin: 0 0 85px;
+
+      @media screen and (max-width: 1180px) {
+        flex-direction: row;
+        margin: 0;
+        padding-left: 70px;
+      }
 
       li {
         width: 30px;
@@ -52,6 +69,10 @@
     bottom: -150px;
     margin-right: 20px;
 
+    @media screen and (max-width: 1180px) {
+      bottom: 0;
+    }
+
 
    em {
      opacity: 0.3;
@@ -66,6 +87,13 @@
      transition: opacity ease-in-out 0.2s;
      color: $main-blue;
      cursor: pointer;
+
+     @media screen and (max-width: 1180px) {
+       transform: rotate(0);
+       right: 0;
+       bottom: 0;
+       padding-right: 70px;
+     }
 
      &:hover {
        color: $main-blue;

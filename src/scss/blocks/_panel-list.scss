@@ -1,0 +1,83 @@
+@import "./src/scss/patterns/index";
+
+.panel-list {
+  display: none;
+  position: fixed;
+  right: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 91;
+  overflow: hidden;
+  backdrop-filter: blur(0);
+
+  &__type_open {
+    display: block;
+    backdrop-filter: blur(5px);
+  }
+
+  &__block {
+    position: absolute;
+    width: 60%;
+    height: 100%;
+    right: -60%;
+    background-color: $white-blue;
+    transition: position ease-in-out 1s;
+
+  }
+
+  &__block_open {
+    right: 0;
+  }
+
+  &__wrapper {
+    margin-top: 70px;
+    @include flex-center-center;
+    flex-direction: column;
+    height: 100%;
+  }
+
+  &__nav {
+    display: flex;
+    flex-direction: column;
+    gap: 50px;
+    ul {
+      @include reset;
+      list-style: square;
+      font-size: 22px;
+      gap: 20px;
+      display: flex;
+      flex-direction: column;
+
+      li {
+        color: #4B98F2;
+
+        a {
+          @include reset;
+          text-decoration: none;
+          font-family: 'PT Mono', monospace;
+          font-style: normal;
+          font-weight: 400;
+          font-size: 18px;
+          letter-spacing: 0.05em;
+          color: $white-gray;
+          cursor: pointer;
+
+          &:hover {
+            color: $main-blue;
+          }
+
+          &:active {
+            color: $main-blue;
+          }
+        }
+      }
+    }
+  }
+
+  &__button-resume {
+    align-self: flex-start;
+    margin-left: -20px;
+
+  }
+}

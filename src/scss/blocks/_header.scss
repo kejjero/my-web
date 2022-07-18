@@ -6,6 +6,10 @@
   box-sizing: border-box;
   @include flex-center-between;
 
+  @media screen and (max-width: 1180px) {
+    padding: 0 70px;
+  }
+
   img {
     width: 160px;
     cursor: pointer;
