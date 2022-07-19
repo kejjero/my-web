@@ -22,6 +22,18 @@
       letter-spacing: 0.05em;
       color: $main-blue;
       margin-bottom: 15px;
+
+      @media screen and (max-width: 500px) {
+        font-size: 40px;
+        line-height: 55px;
+        margin-bottom: 5px;
+      }
+
+      @media screen and (max-width: 335px) {
+        font-size: 35px;
+        line-height: 50px;
+      }
+
     }
 
     p {
@@ -33,6 +45,16 @@
       letter-spacing: 0.01em;
       color: $white-gray;
       margin-bottom: 23px;
+
+      @media screen and (max-width: 500px) {
+        font-size: 20px;
+        line-height: 25px;
+      }
+
+      @media screen and (max-width: 335px) {
+        font-size: 18px;
+        line-height: 22px;
+      }
     }
 
     ul {
@@ -49,6 +71,11 @@
         background-color: $white-blue;
         border-radius: 50%;
         cursor: pointer;
+
+        @media screen and (max-width: 1063px) {
+          width: 35px;
+          height: 35px;
+        }
 
         &:hover {
           transform: scale(1.1);
@@ -71,6 +98,11 @@
             width: 27px;
             height: 27px;
 
+            @media screen and (max-width: 1063px) {
+              width: 23px;
+              height: 27px;
+            }
+
             path {
               transition: fill-opacity ease-in-out 0.3s;
             }
@@ -84,5 +116,9 @@
     width: 550px;
     height: 100%;
     position: relative;
+
+    @media screen and (max-width: 1063px) {
+      padding: 0 10px;
+    }
   }
 }

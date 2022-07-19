@@ -3,8 +3,8 @@ import Header from "./header/Header";
 import Footer from "./Footer";
 import {Routes, Route} from "react-router-dom";
 import Home from "../pages/Home";
-import About from "../pages/About";
-import Portfolio from "../pages/Portfolio";
+import About from "../pages/about/About";
+import Portfolio from "../pages/portfolio/Portfolio"
 import Service from "../pages/Service";
 import Blog from "../pages/Blog";
 import PanelList from "./header/PanelList";

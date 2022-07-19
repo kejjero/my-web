@@ -18,12 +18,16 @@
 
   &__block {
     position: absolute;
-    width: 60%;
+    width: 50%;
     height: 100%;
     right: -60%;
-    background-color: $white-blue;
+    background-color: rgba(0, 0, 0, 0.5);
     transition: position ease-in-out 1s;
+  }
 
+  &__logo {
+    width: 150px;
+    margin-bottom: 20px;
   }
 
   &__block_open {
@@ -31,10 +35,14 @@
   }
 
   &__wrapper {
-    margin-top: 70px;
-    @include flex-center-center;
+    margin-top: 90px;
+    @include flex-center;
     flex-direction: column;
     height: 100%;
+  }
+
+  button {
+    text-decoration: none;
   }
 
   &__nav {

@@ -1,38 +1,42 @@
 import {Swiper, SwiperSlide} from 'swiper/react';
 import {Autoplay, Navigation, Pagination} from 'swiper'
 import 'swiper/css';
-import slideArt from '../images/about-1.svg'
-import slideVector from '../images/about-2.svg'
-import slideUi from '../images/about-3.svg'
-import welcomeImage from '../images/welcome.svg'
+import slideArt from '../../images/about-1.svg'
+import slideVector from '../../images/about-2.svg'
+import slideUi from '../../images/about-3.svg'
+import welcomeImage from '../../images/welcome.svg'
 import 'swiper/css/navigation';
 import 'swiper/css/pagination';
-import stats1 from '../images/stats/stats1.svg'
-import stats2 from '../images/stats/stats2.svg'
-import stats3 from '../images/stats/stats3.svg'
-import exp from '../images/exp.svg'
-import javascript from "../images/skills/javascript.svg";
-import react from "../images/skills/react.svg";
-import reactRouter from "../images/skills/react-router.svg";
-import css from "../images/skills/css.svg";
-import webpack from "../images/skills/webpack.svg";
-import mongodb from "../images/skills/mongodb.svg";
-import nodejs from "../images/skills/nodejs.svg";
-import express from "../images/skills/express.svg";
-import typescript from "../images/skills/typescript.svg";
-import redux from "../images/skills/redux.svg";
-import scss from "../images/skills/sass.svg";
-import sc from "../images/skills/sc.png";
-import html from "../images/skills/html.svg";
-import art1 from "../images/arts/art_1.jpg";
-import art2 from "../images/arts/art_2.jpg";
-import art3 from "../images/arts/art_3.jpg";
+import stats1 from '../../images/stats/stats1.svg'
+import stats2 from '../../images/stats/stats2.svg'
+import stats3 from '../../images/stats/stats3.svg'
+import exp from '../../images/exp.svg'
+import javascript from "../../images/skills/javascript.svg";
+import react from "../../images/skills/react.svg";
+import reactRouter from "../../images/skills/react-router.svg";
+import css from "../../images/skills/css.svg";
+import webpack from "../../images/skills/webpack.svg";
+import mongodb from "../../images/skills/mongodb.svg";
+import nodejs from "../../images/skills/nodejs.svg";
+import express from "../../images/skills/express.svg";
+import typescript from "../../images/skills/typescript.svg";
+import redux from "../../images/skills/redux.svg";
+import scss from "../../images/skills/sass.svg";
+import sc from "../../images/skills/sc.png";
+import html from "../../images/skills/html.svg";
+import art1 from "../../images/arts/art_1.jpg";
+import art2 from "../../images/arts/art_2.jpg";
+import art3 from "../../images/arts/art_3.jpg";
+import art4 from "../../images/arts/art_4.jpg";
+import art5 from "../../images/arts/art_5.jpg";
 import {useEffect, useState} from "react";
 import {Chip} from "@mui/material";
 import InstagramIcon from '@mui/icons-material/Instagram';
 import PhotoFilterIcon from '@mui/icons-material/PhotoFilter';
-import illustration from '../images/arts/illustration.svg'
-
+import illustration from '../../images/arts/illustration.svg'
+import slideArtMobile from '../../images/about/about-1_mobile.svg'
+import slideVectorMobile from '../../images/about/about-2_mobile.svg'
+import slideUiMobile from '../../images/about/about-3_mobile.svg'
 
 function About() {
     const [scroll, setScroll] = useState(0);
@@ -48,10 +52,18 @@ function About() {
         {image: slideVector, title: 'Создаю векторные иллюстрации'},
     ]
 
+    const itemsMobile = [
+        {image: slideArtMobile, title: 'Развиваю себя как цифрового художника'},
+        {image: slideUiMobile, title: 'Практикуюсь в создании UX/UI дизайна'},
+        {image: slideVectorMobile, title: 'Создаю векторные иллюстрации'},
+    ]
+
     const arts = [
         {image: art1},
         {image: art2},
         {image: art3},
+        {image: art4},
+        {image: art5},
     ]
 
     const slidesArts = arts.map((item, index) => {
@@ -69,6 +81,21 @@ function About() {
     })
 
     const slides = items.map((item, index) => {
+        return (
+            <SwiperSlide key={index}
+                         style={{
+                             display: 'flex',
+                             flexDirection: 'column',
+                             alignItems: 'center',
+                             justifyContent: 'center'
+                         }}>
+                <h3 className="slider__title">{item.title}</h3>
+                <img className="slider__image" src={item.image} alt={item.title}/>
+            </SwiperSlide>
+        )
+    })
+
+    const slidesMobile = itemsMobile.map((item, index) => {
         return (
             <SwiperSlide key={index}
                          style={{
@@ -105,25 +132,30 @@ function About() {
                             <span style={{color: '#764ABC'}}> Redux</span>.
                         </p>
                     </div>
-                    <button
-                        className={`welcome__button ${scroll > 150 ? '' : "welcome__button_open"}`}
-                        type="button"
-                    >
-                        <a href="#info">
-                            <svg width="27" height="45" viewBox="0 0 27 45" fill="none"
-                                 xmlns="http://www.w3.org/2000/svg">
-                                <rect x="0.5" y="0.5" width="26" height="44" rx="13" stroke="#D9D9D9"/>
-                                <circle cx="13.5" cy="9.5" r="4.5" fill="#D9D9D9" className="welcome__circle"/>
-                            </svg>
-                        </a>
-                    </button>
+                    {
+                        window.screen.width > 780
+                        &&
+                        <button
+                            className={`welcome__button ${scroll > 150 ? '' : "welcome__button_open"}`}
+                            type="button"
+                        >
+                            <a href="#info">
+                                <svg width="27" height="45" viewBox="0 0 27 45" fill="none"
+                                     xmlns="http://www.w3.org/2000/svg">
+                                    <rect x="0.5" y="0.5" width="26" height="44" rx="13" stroke="#D9D9D9"/>
+                                    <circle cx="13.5" cy="9.5" r="4.5" fill="#D9D9D9" className="welcome__circle"/>
+                                </svg>
+                            </a>
+                        </button>
+                    }
                 </div>
                 <img className="welcome__image" src={welcomeImage} alt=""/>
             </section>
             <section className="info" id="info">
                 <div className="info__wrapper">
                     <div className="info__box-image">
-                        <img className="info__image x1" src="https://avon-061.ru/wp-content/uploads/c/e/c/cec1118855cc6bd3762ec2fce1c8bfdf.jpg"
+                        <img className="info__image x1"
+                             src="https://avon-061.ru/wp-content/uploads/c/e/c/cec1118855cc6bd3762ec2fce1c8bfdf.jpg"
                              alt=""/>
                         <img className="info__image x2"
                              src="https://www.1000ideas.ru/upload/coworking.jpeg" alt=""/>
@@ -159,7 +191,7 @@ function About() {
             <section className="skills">
                 <div className="skills__wrapper">
                     <div className="skills__exp">
-                        <h3 className="title"><span className="cube"></span>Опыт проектной разработки</h3>
+                        <h3 className="title skills__title"><span className="cube"></span>Опыт проектной разработки</h3>
                         <img src={exp} alt="exp"/>
                     </div>
                     <div className="skills__position">
@@ -246,7 +278,7 @@ function About() {
                 </div>
             </section>
             <section className="slider">
-                <h3 className="title"><span className="cube">
+                <h3 className="title slider__name"><span className="cube">
                 </span>А еще я...</h3>
                 <div className="slider__main-box">
                     <div className="slider__wrapper">
@@ -257,7 +289,9 @@ function About() {
                             loop={true}
                             spaceBetween={500}
                         >
-                            {slides}
+                            {
+                                window.screen.width > 1180 ? slides : slidesMobile
+                            }
                         </Swiper>
                         <span>
                     </span>
@@ -270,7 +304,7 @@ function About() {
                     <p className="paragraph">
                         За 2021-2022гг. я в достаточной мере спрогрессировал по всем направлениям, которые развиваю в
                         себе. В 2022 году главным моим приоритетом остается веб-разработка. Ей я уделяю большую часть
-                        свободного времени, чтобы выйти на новый для себя уровень <span className="emoji">👀</span>
+                        свободного времени, чтобы выйти на новый для себя уровень.
                     </p>
                 </div>
                 <ul className="stats__cards">
@@ -278,31 +312,41 @@ function About() {
                         <div className="stats__image-box">
                             <img className="stats__image" src={stats1} alt=""/>
                         </div>
-                        <h4 className="stats__count">6</h4>
-                        <p className="stats__description"><span style={{color: '#4B98F2'}}>WEB</span>-проектов</p>
+                        <div className="stats__description">
+                            <h4 className="stats__count">6</h4>
+                            <p className="stats__paragraph"><span style={{color: '#4B98F2'}}>WEB</span>-проектов</p>
+                        </div>
                     </li>
                     <li className="stats__card">
                         <div className="stats__image-box">
                             <img className="stats__image" src={stats2} alt=""/>
                         </div>
-                        <h4 className="stats__count">3</h4>
-                        <p className="stats__description"><span style={{color: '#4B98F2'}}>UI</span>-дизайна</p>
+                        <div className="stats__description">
+                            <h4 className="stats__count">3</h4>
+                            <p className="stats__paragraph"><span style={{color: '#4B98F2'}}>UI</span>-дизайна</p>
+                        </div>
                     </li>
                     <li className="stats__card">
                         <div className="stats__image-box">
                             <img className="stats__image" src={stats3} alt=""/>
                         </div>
-                        <h4 className="stats__count">8</h4>
-                        <p className="stats__description"><span style={{color: '#4B98F2'}}>CG</span>-артов</p>
+                        <div className="stats__description">
+                            <h4 className="stats__count">8</h4>
+                            <p className="stats__paragraph"><span style={{color: '#4B98F2'}}>CG</span>-артов</p>
+                        </div>
                     </li>
                 </ul>
             </section>
             <section className="arts">
                 <div className="arts__text-box">
-                    <h3 className="title"><span className="cube"></span>CG-портфолио </h3>
+                    <h3 className="title arts__title"><span className="cube"></span>CG-портфолио </h3>
                     <p className="paragraph">
-                        Небольшое портфолио цифровых артов, выполненных в растровой графике (Adobe Photoshop + графический
-                        планшет). Более подробнее с моим творчеством можно ознакомиться в инстаграме и на артстейшене.
+                        Небольшое портфолио цифровых артов, выполненных в растровой графике (Adobe Photoshop +
+                        графический
+                        планшет).
+                    </p>
+                    <p className="paragraph">
+                        Более подробнее с моим творчеством можно ознакомиться в инстаграме и на артстейшене.
                     </p>
                     <div className="arts__links">
                         <a className="arts__link" href="https://instagram.com/kejero.arts/" target="_blank">
@@ -326,9 +370,12 @@ function About() {
                             />
                         </a>
                     </div>
-                    <div className="arts__illustration">
-                        <img style={{width: '100%'}} src={illustration} alt=""/>
-                    </div>
+                    {
+                        window.screen.width > 1190 &&
+                        <div className="arts__illustration">
+                            <img style={{width: '100%'}} src={illustration} alt=""/>
+                        </div>
+                    }
                 </div>
 
                 <div className="arts__slider-wrapper">

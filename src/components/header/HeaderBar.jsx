@@ -8,10 +8,10 @@ function HeaderBar({isOpenBurger, setIsOpenBurger}) {
     function animationLinesBar(spanArray) {
         if (!isOpenBurger) {
             spanArray[0].style.transform = 'rotate(-45deg)'
-            spanArray[0].style.marginTop = '5px'
+            spanArray[0].style.marginTop = '7px'
             spanArray[1].style.display = 'none'
             spanArray[2].style.transform = 'rotate(45deg)'
-            spanArray[2].style.marginBottom = '7px'
+            spanArray[2].style.marginBottom = '12px'
         } else {
             spanArray[0].style.transform = 'rotate(0)'
             spanArray[0].style.marginTop = '0'
@@ -30,14 +30,6 @@ function HeaderBar({isOpenBurger, setIsOpenBurger}) {
     return (
         <header className="header-bar">
             <div className="header-bar__wrapper">
-                <Link to="/">
-                    <img
-                        className="header-bar__logo"
-                        src={logo}
-                        alt="logo"
-                        style={{width: '70px'}}
-                    />
-                </Link>
                 <div
                     className="burger"
                     onClick={() =>

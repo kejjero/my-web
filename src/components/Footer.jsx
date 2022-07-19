@@ -56,11 +56,14 @@ function Footer() {
                     </li>
                 </ul>
             </div>
-            <div className="footer__mail">
-                <span className="line">
-                </span>
-                <em>kejeroarts@yandex.ru</em>
-            </div>
+            {
+                window.screen.width > 550 ?
+                    <div className="footer__mail">
+                        <span className="line"></span>
+                        <em>kejeroarts@yandex.ru</em>
+                    </div>
+                    : <p className="footer__copy"><span style={{fontSize: '18px'}}>©</span> kejero.pw</p>
+            }
         </footer>
     )
 }
