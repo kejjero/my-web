@@ -6,6 +6,14 @@
   flex-direction: column;
   @include flex-center-center;
 
+  @media screen and (max-width: 920px) {
+    padding: 0 20px 0 20px;
+  }
+
+  @media screen and (max-width: 500px) {
+    padding: 0;
+  }
+
   &__works {
     @include reset-list;
     display: flex;
@@ -18,8 +26,13 @@
     display: flex;
     align-items: flex-start;
     box-sizing: border-box;
-    padding: 10px;
+    padding: 10px 0;
     gap: 40px;
+
+    @media screen and (max-width: 1100px) {
+      flex-direction: column;
+      gap: 0;
+    }
 
     &:last-child {
       margin-bottom: 100px;
@@ -33,6 +46,25 @@
     border-radius: 10px;
     overflow: hidden;
     cursor: pointer;
+
+    @media screen and (max-width: 1100px) {
+      min-width: 0;
+      height: 450px;
+      width: 100%;
+    }
+
+    @media screen and (max-width: 640px) {
+      height: 350px;
+    }
+
+    @media screen and (max-width: 500px) {
+      height: 300px;
+      border-radius: 0;
+    }
+
+    @media screen and (max-width: 380px) {
+      height: 250px;
+    }
   }
 
   &__image {
@@ -49,6 +81,14 @@
 
   &__info {
     align-self: flex-start;
+
+    @media screen and (max-width: 1100px) {
+      width: 70%;
+    }
+
+    @media screen and (max-width: 550px) {
+      width: 100%;
+    }
   }
 
   &__title {
@@ -61,6 +101,10 @@
     letter-spacing: 0.05em;
     color: $main-blue;
     margin-bottom: 15px;
+
+    @media screen and (max-width: 500px) {
+      margin-left: 10px;
+    }
   }
 
   &__description {
@@ -73,10 +117,22 @@
     letter-spacing: 0.02em;
     color: $dark-gray;
     margin-bottom: 10px;
+
+    @media screen and (max-width: 1100px) {
+      margin-top: 20px;
+    }
+
+    @media screen and (max-width: 500px) {
+      margin: 20px 10px 15px 10px;
+    }
   }
 
   &__stack {
     @include flex-center;
+
+    @media screen and (max-width: 500px) {
+      margin: 0 10px;
+    }
   }
 
   &__skills {
@@ -86,6 +142,11 @@
     flex-wrap: wrap;
     row-gap: 10px;
     column-gap: 20px;
+
+    @media screen and (max-width: 500px) {
+      row-gap: 6px;
+      column-gap: 12px;
+    }
   }
 
   &__skill {
@@ -114,6 +175,10 @@
     @include flex-center;
     justify-content: flex-start;
     gap: 10px;
+
+    @media screen and (max-width: 500px) {
+      margin: 20px 10px 0 10px;
+    }
   }
 
   &__link {

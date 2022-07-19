@@ -11,7 +11,22 @@
   @media screen and (max-width: 1180px) {
     position: relative;
     background-color: rgba(0, 0, 0, 0.1);
-    height: 100px;
+    height: 60px;
+  }
+
+  @media screen and (max-width: 550px) {
+    padding: 10px 0;
+    box-sizing: border-box;
+    width: 100%;
+    display: flex;
+    align-items: center;
+  }
+
+  &__copy {
+    @include reset;
+    padding-right: 10px;
+    opacity: 0.3;
+    font-size: 16px;
   }
 
   .line {
@@ -42,6 +57,14 @@
         flex-direction: row;
         margin: 0;
         padding-left: 70px;
+      }
+
+      @media screen and (max-width: 920px) {
+        padding-left: 40px;
+      }
+
+      @media screen and (max-width: 550px) {
+        padding-left: 10px;
       }
 
       li {
@@ -93,6 +116,14 @@
        right: 0;
        bottom: 0;
        padding-right: 70px;
+     }
+
+     @media screen and (max-width: 920px) {
+       padding-right: 40px;
+     }
+
+     @media screen and (max-width: 550px) {
+       padding-right: 10px;
      }
 
      &:hover {

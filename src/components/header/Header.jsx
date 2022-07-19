@@ -3,6 +3,7 @@ import {Button} from "@mui/material";
 import {Link} from "react-router-dom";
 import {useEffect, useState} from "react";
 import HeaderBar from "./HeaderBar"
+import ContactPageOutlinedIcon from "@mui/icons-material/ContactPageOutlined";
 
 function Header({isOpenBurger, setIsOpenBurger}) {
     const [onBurgerMenu, setOnBurgerMenu] = useState(false);
@@ -31,7 +32,11 @@ function Header({isOpenBurger, setIsOpenBurger}) {
                         <li><Link to="/blog">Блог</Link></li>
                     </ul>
                     <a href="https://career.habr.com/kejero" target="_blank">
-                        <Button variant="outlined">
+                        <Button
+                            variant="outlined"
+                            size="medium"
+                            startIcon={<ContactPageOutlinedIcon />}
+                        >
                             резюме
                         </Button>
                     </a>
