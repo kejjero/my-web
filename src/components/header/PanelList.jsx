@@ -2,8 +2,11 @@ import {Link} from "react-router-dom";
 import {Button, createTheme, ThemeProvider} from "@mui/material";
 import logo from "../../images/logo.svg"
 import ContactPageOutlinedIcon from '@mui/icons-material/ContactPageOutlined';
+import {arrayMenu} from "../../utils/utils";
+import {useState} from "react";
 
-function PanelList({isOpenBurger}) {
+function PanelList({isOpenBurger, setIsOpenBurger, setActiveIndexBurger}) {
+    const [activeIndex, setActiveIndex] = useState(null);
 
     const theme = createTheme({
         status: {
@@ -16,8 +19,18 @@ function PanelList({isOpenBurger}) {
         },
     });
 
+    const checkActive = (i) => {
+        setActiveIndex(i)
+    }
+
+    // function closeBurger() {
+    //     setIsOpenBurger(false)
+    //     setActiveIndexBurger(null)
+    // }
+
     return (
         <div className={`panel-list ${isOpenBurger && "panel-list__type_open"}`}>
+            <div className="panel-list__background">
             <div className={`panel-list__block ${isOpenBurger && "panel-list__block_open"}`}>
                 <div className="panel-list__wrapper">
                     <Link to="/">
@@ -25,10 +38,19 @@ function PanelList({isOpenBurger}) {
                     </Link>
                     <nav className="panel-list__nav">
                         <ul>
-                            <li><Link to="/about">Обо мне</Link></li>
-                            <li><Link to="/portfolio">Портфолио</Link></li>
-                            <li><Link to="/service">Услуги</Link></li>
-                            <li><Link to="/blog">Блог</Link></li>
+                            {
+                                arrayMenu.map((item, index) => {
+                                    return (
+                                        <li
+                                            key={index}
+                                            className={`${activeIndex === index ? 'header__active' : ''}`}
+                                            onClick={() => checkActive(index)}
+                                        >
+                                            <Link to={item.link}>{item.name}</Link>
+                                        </li>
+                                    )
+                                })
+                            }
                         </ul>
                         <a
                             className="panel-list__button-resume"
@@ -39,7 +61,7 @@ function PanelList({isOpenBurger}) {
                                 <Button
                                     variant="outlined"
                                     size="medium"
-                                    startIcon={<ContactPageOutlinedIcon />}
+                                    startIcon={<ContactPageOutlinedIcon/>}
                                 >
                                     резюме
                                 </Button>
@@ -47,6 +69,7 @@ function PanelList({isOpenBurger}) {
                         </a>
                     </nav>
                 </div>
+            </div>
             </div>
         </div>
     )

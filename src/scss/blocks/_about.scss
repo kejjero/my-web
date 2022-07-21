@@ -784,6 +784,7 @@
     gap: 50px;
     flex-wrap: wrap;
     width: 100%;
+    z-index: 101;
 
     &__text-box {
       display: flex;

@@ -12,6 +12,7 @@ import {useState} from "react";
 
 function App() {
     const [isOpenBurger, setIsOpenBurger] = useState();
+
   return (
       <div className="wrapper">
           <Header
@@ -19,7 +20,10 @@ function App() {
               isOpenBurger={isOpenBurger}
           />
           <main className="content">
-              <PanelList isOpenBurger={isOpenBurger}/>
+              <PanelList
+                  isOpenBurger={isOpenBurger}
+                  setIsOpenBurger={setIsOpenBurger}
+              />
               <Routes>
                   <Route path="/" element={<Home/>}/>
                   <Route path="/about" element={<About/>}/>

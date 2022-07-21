@@ -13,16 +13,23 @@
 
   &__type_open {
     display: block;
-    backdrop-filter: blur(5px);
+    animation: blur ease-in-out forwards 0.3s;
   }
 
   &__block {
     position: absolute;
     width: 50%;
     height: 100%;
-    right: -60%;
+    right: -50%;
     background-color: rgba(0, 0, 0, 0.5);
     transition: position ease-in-out 1s;
+    z-index: 100;
+  }
+
+  &__background {;
+    height: 100%;
+    width: 50%;
+    margin-right: 50%;
   }
 
   &__logo {
@@ -31,7 +38,26 @@
   }
 
   &__block_open {
-    right: 0;
+    animation: block ease-in-out forwards 0.2s;
+  }
+
+  @keyframes blur {
+    0% {
+      backdrop-filter: blur(0);
+    }
+    100% {
+      backdrop-filter: blur(5px);
+    }
+
+  }
+  @keyframes block {
+    0% {
+      right: -50%;
+    }
+
+    100% {
+      right: 0;
+    }
   }
 
   &__wrapper {
@@ -71,13 +97,6 @@
           color: $white-gray;
           cursor: pointer;
 
-          &:hover {
-            color: $main-blue;
-          }
-
-          &:active {
-            color: $main-blue;
-          }
         }
       }
     }
