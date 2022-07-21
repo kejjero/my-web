@@ -10,12 +10,28 @@
     padding: 0 70px;
   }
 
+
+  &__active::marker {
+    color: #fff;
+  }
+
+  @keyframes widthAnimation {
+    0% {
+      width: 0;
+    }
+
+    100% {
+      width: 100%;
+    }
+  }
+
+
   img {
     width: 160px;
     cursor: pointer;
   }
 
-  nav {
+  &__nav {
     @include flex-center-between;
     gap: 30px;
 
@@ -27,6 +43,7 @@
 
       li {
         color: #4B98F2;
+        position: relative;
 
         a {
           @include reset;
@@ -38,14 +55,6 @@
           letter-spacing: 0.05em;
           color: $white-gray;
           cursor: pointer;
-
-          &:hover {
-            color: $main-blue;
-          }
-
-          &:active {
-            color: $main-blue;
-          }
         }
       }
     }

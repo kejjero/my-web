@@ -4,15 +4,22 @@ import {Link} from "react-router-dom";
 import {useEffect, useState} from "react";
 import HeaderBar from "./HeaderBar"
 import ContactPageOutlinedIcon from "@mui/icons-material/ContactPageOutlined";
+import {arrayMenu} from "../../utils/utils";
 
 function Header({isOpenBurger, setIsOpenBurger}) {
+    const [activeIndexBurger, setActiveIndexBurger] = useState(null);
+
     const [onBurgerMenu, setOnBurgerMenu] = useState(false);
+
     useEffect(() => {
         if (window.screen.width < 920) {
             setOnBurgerMenu(true)
         }
     }, [])
 
+    const checkActive = (i) => {
+        setActiveIndexBurger(i)
+    }
 
     return (
         onBurgerMenu ?
@@ -22,20 +29,29 @@ function Header({isOpenBurger, setIsOpenBurger}) {
             /> :
             <header className="header">
                 <Link to='/'>
-                    <img src={logo} alt="logo"/>
+                    <img onClick={() => setActiveIndexBurger(null)} src={logo} alt="logo"/>
                 </Link>
                 <nav className="header__nav">
                     <ul>
-                        <li><Link to="/about">Обо мне</Link></li>
-                        <li><Link to="/portfolio">Портфолио</Link></li>
-                        <li><Link to="/service">Услуги</Link></li>
-                        <li><Link to="/blog">Блог</Link></li>
+                        {
+                            arrayMenu.map((item, index) => {
+                                return (
+                                    <li
+                                        key={index}
+                                        className={`${activeIndexBurger === index ? 'header__active' : ''}`}
+                                        onClick={() => checkActive(index)}
+                                    >
+                                        <Link to={item.link}>{item.name}</Link>
+                                    </li>
+                                )
+                            })
+                        }
                     </ul>
                     <a href="https://career.habr.com/kejero" target="_blank">
                         <Button
                             variant="outlined"
                             size="medium"
-                            startIcon={<ContactPageOutlinedIcon />}
+                            startIcon={<ContactPageOutlinedIcon/>}
                         >
                             резюме
                         </Button>

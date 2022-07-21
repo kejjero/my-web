@@ -1,6 +1,4 @@
-import logo from '../../images/logo_bar.svg'
 import {useRef} from "react";
-import {Link} from "react-router-dom";
 
 function HeaderBar({isOpenBurger, setIsOpenBurger}) {
     const refBurger = useRef();
@@ -8,10 +6,10 @@ function HeaderBar({isOpenBurger, setIsOpenBurger}) {
     function animationLinesBar(spanArray) {
         if (!isOpenBurger) {
             spanArray[0].style.transform = 'rotate(-45deg)'
-            spanArray[0].style.marginTop = '7px'
+            spanArray[0].style.marginTop = '8px'
             spanArray[1].style.display = 'none'
             spanArray[2].style.transform = 'rotate(45deg)'
-            spanArray[2].style.marginBottom = '12px'
+            spanArray[2].style.marginBottom = '7px'
         } else {
             spanArray[0].style.transform = 'rotate(0)'
             spanArray[0].style.marginTop = '0'
