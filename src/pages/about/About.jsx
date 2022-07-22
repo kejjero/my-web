@@ -1,6 +1,5 @@
 import {Swiper, SwiperSlide} from 'swiper/react';
 import {Autoplay, Navigation, Pagination} from 'swiper'
-import 'swiper/css';
 import slideArt from '../../images/about-1.svg'
 import slideVector from '../../images/about-2.svg'
 import slideUi from '../../images/about-3.svg'
@@ -24,23 +23,16 @@ import redux from "../../images/skills/redux.svg";
 import scss from "../../images/skills/sass.svg";
 import sc from "../../images/skills/sc.png";
 import html from "../../images/skills/html.svg";
-import art1 from "../../images/arts/art_1.jpg";
-import art2 from "../../images/arts/art_2.jpg";
-import art3 from "../../images/arts/art_3.jpg";
-import art4 from "../../images/arts/art_4.jpg";
-import art5 from "../../images/arts/art_5.jpg";
+import axios from "../../images/skills/axios.svg"
+import materialUi from '../../images/skills/material-ui.svg'
 import {useEffect, useState} from "react";
-import {Chip} from "@mui/material";
-import InstagramIcon from '@mui/icons-material/Instagram';
-import PhotoFilterIcon from '@mui/icons-material/PhotoFilter';
-import illustration from '../../images/arts/illustration.svg'
 import slideArtMobile from '../../images/about/about-1_mobile.svg'
 import slideVectorMobile from '../../images/about/about-2_mobile.svg'
 import slideUiMobile from '../../images/about/about-3_mobile.svg'
+import Arts from "./Arts";
 
 function About() {
     const [scroll, setScroll] = useState(0);
-    const [thumbsSwiper, setThumbsSwiper] = useState(null);
 
     const checkScrollPosition = () => {
         setScroll(window.scrollY)
@@ -58,27 +50,6 @@ function About() {
         {image: slideVectorMobile, title: 'Создаю векторные иллюстрации'},
     ]
 
-    const arts = [
-        {image: art1},
-        {image: art2},
-        {image: art3},
-        {image: art4},
-        {image: art5},
-    ]
-
-    const slidesArts = arts.map((item, index) => {
-        return (
-            <SwiperSlide key={index}
-                         style={{
-                             display: 'flex',
-                             flexDirection: 'column',
-                             alignItems: 'center',
-                             justifyContent: 'center'
-                         }}>
-                <img className="arts__img" src={item.image} alt={item.title}/>
-            </SwiperSlide>
-        )
-    })
 
     const slides = items.map((item, index) => {
         return (
@@ -219,6 +190,10 @@ function About() {
                                     <h4 className="portfolio__skill-name">React Router</h4>
                                 </li>
                                 <li className="portfolio__skill">
+                                    <img className="portfolio__skill-image" src={axios} alt="axios"/>
+                                    <h4 className="portfolio__skill-name">Axios</h4>
+                                </li>
+                                <li className="portfolio__skill">
                                     <img className="portfolio__skill-image" src={webpack} alt="webpack"/>
                                     <h4 className="portfolio__skill-name">WebPack</h4>
                                 </li>
@@ -237,6 +212,10 @@ function About() {
                                 <li className="portfolio__skill">
                                     <img className="portfolio__skill-image" src={sc} alt="scss"/>
                                     <h4 className="portfolio__skill-name">Styled components</h4>
+                                </li>
+                                <li className="portfolio__skill">
+                                    <img className="portfolio__skill-image" src={materialUi} alt="material-ui"/>
+                                    <h4 className="portfolio__skill-name">Material UI</h4>
                                 </li>
                                 <li className="portfolio__skill">
                                     <img className="portfolio__skill-image" src={nodejs} alt="nodejs"/>
@@ -337,70 +316,7 @@ function About() {
                     </li>
                 </ul>
             </section>
-            <section className="arts">
-                <div className="arts__text-box">
-                    <h3 className="title arts__title"><span className="cube"></span>CG-портфолио </h3>
-                    <p className="paragraph">
-                        Небольшое портфолио цифровых артов, выполненных в растровой графике (Adobe Photoshop +
-                        графический
-                        планшет).
-                    </p>
-                    <p className="paragraph">
-                        Более подробнее с моим творчеством можно ознакомиться в инстаграме и на артстейшене.
-                    </p>
-                    <div className="arts__links">
-                        <a className="arts__link" href="https://instagram.com/kejero.arts/" target="_blank">
-                            <Chip
-                                style={{cursor: "pointer"}}
-                                label="Instagram"
-                                icon={<InstagramIcon/>}
-                                variant="outlined"
-                                color="secondary"
-                                size="medium"
-                            />
-                        </a>
-                        <a className="arts__link" href="https://www.artstation.com/kejero" target="_blank">
-                            <Chip
-                                style={{cursor: "pointer"}}
-                                label="Artstation"
-                                icon={<PhotoFilterIcon/>}
-                                variant="outlined"
-                                color="info"
-                                size="medium"
-                            />
-                        </a>
-                    </div>
-                    {
-                        window.screen.width > 1190 &&
-                        <div className="arts__illustration">
-                            <img style={{width: '100%'}} src={illustration} alt=""/>
-                        </div>
-                    }
-                </div>
-
-                <div className="arts__slider-wrapper">
-                    <Swiper
-                        id="arts"
-                        modules={[Navigation, Pagination]}
-                        loop={true}
-                        freeMode={true}
-                        watchSlidesProgress={true}
-                    >
-                        {slidesArts}
-                    </Swiper>
-                    <Swiper
-                        onSwiper={setThumbsSwiper}
-                        loop={true} spaceBetween={10}
-                        slidesPerView={4}
-                        freeMode={true}
-                        watchSlidesVisibility={true}
-                        watchSlidesProgress={true}
-                        className="mySwiper"
-                    >
-                        {slidesArts}
-                    </Swiper>
-                </div>
-            </section>
+            <Arts/>
         </div>
     )
 }

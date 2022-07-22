@@ -16,6 +16,9 @@ import webpack from '../../images/skills/webpack.svg'
 import mongodb from '../../images/skills/mongodb.svg'
 import nodejs from '../../images/skills/nodejs.svg'
 import express from '../../images/skills/express.svg'
+import axios from "../../images/skills/axios.svg";
+import materialUi from "../../images/skills/material-ui.svg";
+
 
 function MobilePortfolio() {
     return(
@@ -48,6 +51,14 @@ function MobilePortfolio() {
                             <li className="portfolio__skill">
                                 <img className="portfolio__skill-image" src={reactRouter} alt="redux"/>
                                 <h4 className="portfolio__skill-name">React Router</h4>
+                            </li>
+                            <li className="portfolio__skill">
+                                <img className="portfolio__skill-image" src={materialUi} alt="material-ui"/>
+                                <h4 className="portfolio__skill-name">Material UI</h4>
+                            </li>
+                            <li className="portfolio__skill">
+                                <img className="portfolio__skill-image" src={axios} alt="axios"/>
+                                <h4 className="portfolio__skill-name">Axios</h4>
                             </li>
                             <li className="portfolio__skill">
                                 <img className="portfolio__skill-image" src={scss} alt="scss"/>
@@ -110,6 +121,10 @@ function MobilePortfolio() {
                             <li className="portfolio__skill">
                                 <img className="portfolio__skill-image" src={reactRouter} alt="redux"/>
                                 <h4 className="portfolio__skill-name">React Router</h4>
+                            </li>
+                            <li className="portfolio__skill">
+                                <img className="portfolio__skill-image" src={axios} alt="axios"/>
+                                <h4 className="portfolio__skill-name">Axios</h4>
                             </li>
                             <li className="portfolio__skill">
                                 <img className="portfolio__skill-image" src={css} alt="scss"/>
@@ -182,8 +197,20 @@ function MobilePortfolio() {
                                 <h4 className="portfolio__skill-name">React Router</h4>
                             </li>
                             <li className="portfolio__skill">
+                                <img className="portfolio__skill-image" src={axios} alt="axios"/>
+                                <h4 className="portfolio__skill-name">Axios</h4>
+                            </li>
+                            <li className="portfolio__skill">
                                 <img className="portfolio__skill-image" src={scss} alt="scss"/>
                                 <h4 className="portfolio__skill-name">SCSS</h4>
+                            </li>
+                            <li className="portfolio__skill">
+                                <img className="portfolio__skill-image" src={materialUi} alt="material-ui"/>
+                                <h4 className="portfolio__skill-name">Material UI</h4>
+                            </li>
+                            <li className="portfolio__skill">
+                                <img className="portfolio__skill-image" src={sc} alt="scss"/>
+                                <h4 className="portfolio__skill-name">Styled components</h4>
                             </li>
                         </ul>
                     </div>
