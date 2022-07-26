@@ -9,6 +9,10 @@
   gap: 70px;
   margin-top: 70px;
 
+  @media screen and (max-width: 1070px) {
+    margin-top: 0;
+  }
+
   &__text-wrapper {
     @include flex-center-center;
     flex-direction: column;
