@@ -1,7 +1,7 @@
 import {Button} from "@mui/material";
 import SendIcon from '@mui/icons-material/Send';
-import intro from '../images/intro.svg'
 import {useSnackbar } from 'notistack';
+import { Player } from '@lottiefiles/react-lottie-player';
 
 function Home() {
     const { enqueueSnackbar } = useSnackbar();
@@ -82,10 +82,20 @@ function Home() {
                 </ul>
             </div>
             <div className="intro__image-wrapper">
-                <img src={intro} alt="intro"/>
+                <Player
+                    autoplay
+                    loop
+                    src="https://assets2.lottiefiles.com/private_files/lf30_0f3j4ipz.json"
+                >
+                </Player>
             </div>
         </section>
     )
+}
+
+const asd = {
+    kejero: 'developer',
+
 }
 
 export default Home;
