@@ -1,7 +1,12 @@
 import {useLocation} from "react-router";
 
-function Footer() {
+function Footer({setOpenPopupEmail, setSuccessCopyEmail}) {
     const location = useLocation();
+
+    const onClickPopupEmail = () => {
+        setSuccessCopyEmail(false)
+        setOpenPopupEmail(true)
+    }
 
     return (
         location.pathname !== '/' &&
@@ -60,7 +65,7 @@ function Footer() {
                 window.screen.width > 550 ?
                     <div className="footer__mail">
                         <span className="line"></span>
-                        <em>kejeroarts@yandex.ru</em>
+                        <em onClick={onClickPopupEmail}>kejeroarts@yandex.ru</em>
                     </div>
                     : <p className="footer__copy"><span style={{fontSize: '18px'}}>©</span> kejero.pw</p>
             }
