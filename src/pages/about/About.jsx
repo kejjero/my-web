@@ -107,16 +107,15 @@ function About() {
                         window.screen.width > 780
                         &&
                         <button
-                            className={`welcome__button ${scroll > 150 ? '' : "welcome__button_open"}`}
+                            className={"welcome__button welcome__button_open"}
                             type="button"
-                        >
-                            <a href="#info">
-                                <svg width="27" height="45" viewBox="0 0 27 45" fill="none"
-                                     xmlns="http://www.w3.org/2000/svg">
-                                    <rect x="0.5" y="0.5" width="26" height="44" rx="13" stroke="#D9D9D9"/>
-                                    <circle cx="13.5" cy="9.5" r="4.5" fill="#D9D9D9" className="welcome__circle"/>
-                                </svg>
-                            </a>
+                        ><a href="#info">
+                            <svg width="27" height="45" viewBox="0 0 27 45" fill="none"
+                                 xmlns="http://www.w3.org/2000/svg">
+                                <rect x="0.5" y="0.5" width="26" height="44" rx="13" stroke="#D9D9D9"/>
+                                <circle cx="13.5" cy="9.5" r="3.5" fill="#D9D9D9" className="welcome__circle"/>
+                            </svg>
+                        </a>
                         </button>
                     }
                 </div>
@@ -124,6 +123,10 @@ function About() {
             </section>
             <section className="info" id="info">
                 <div className="info__wrapper">
+                    {
+                        window.screen.width < 1080 &&
+                        <h3 style={{textAlign: 'start', width: '100%', marginLeft: '20px'}} className="title"><span className="cube"></span>Моя история</h3>
+                    }
                     <div className="info__box-image">
                         <img className="info__image x1"
                              src="https://avon-061.ru/wp-content/uploads/c/e/c/cec1118855cc6bd3762ec2fce1c8bfdf.jpg"
@@ -138,7 +141,10 @@ function About() {
                              alt=""/>
                     </div>
                     <div className="info__box-text">
-                        <h3 className="title"><span className="cube"></span>Моя история</h3>
+                        {
+                            window.screen.width > 1080 &&
+                            <h3 className="title"><span className="cube"></span>Моя история</h3>
+                        }
                         <p className="paragraph">
                             Свой путь начал с того, что в качестве хобби занимался рисованием в растровой и векторной
                             графике, а еще немного ковырялся с кодом.
@@ -258,7 +264,7 @@ function About() {
             </section>
             <section className="slider">
                 <h3 className="title slider__name"><span className="cube">
-                </span>А еще я...</h3>
+                        </span>А еще я...</h3>
                 <div className="slider__main-box">
                     <div className="slider__wrapper">
                         <Swiper
@@ -273,7 +279,7 @@ function About() {
                             }
                         </Swiper>
                         <span>
-                    </span>
+                        </span>
                     </div>
                 </div>
             </section>

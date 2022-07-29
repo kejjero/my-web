@@ -1,25 +1,24 @@
 import {Button} from "@mui/material";
 import SendIcon from '@mui/icons-material/Send';
-import {useSnackbar } from 'notistack';
 import { Player } from '@lottiefiles/react-lottie-player';
 
-function Home() {
-    const { enqueueSnackbar } = useSnackbar();
-    const coppyWriteText = () => {
-        navigator.clipboard.writeText('kejeroarts@yandex.ru')
-    }
+function Home({setOpenPopupEmail, setSuccessCopyEmail, setOpenPopupCooperation}) {
 
-    const handleClickVariant = (variant) => async () => {
-        enqueueSnackbar('Почта добавлена в буффер обмена.', {variant});
-        await coppyWriteText()
-    };
+    const onClickPopupEmail = () => {
+        setSuccessCopyEmail(false)
+        setOpenPopupEmail(true)
+    }
 
     return (
         <section className="intro">
             <div className="intro__text-wrapper">
                 <h1>Петерс Максим</h1>
                 <p>Frontend Developer</p>
-                <Button variant="outlined" startIcon={<SendIcon/>}>
+                <Button
+                    variant="outlined"
+                    startIcon={<SendIcon/>}
+                    onClick={() => setOpenPopupCooperation(true)}
+                >
                     Сотрудничество
                 </Button>
                 <ul>
@@ -33,7 +32,7 @@ function Home() {
                             </svg>
                         </a>
                     </li>
-                    <li onClick={handleClickVariant('success')}>
+                    <li onClick={() => onClickPopupEmail()}>
                         <a>
                             <svg xmlns="http://www.w3.org/2000/svg" viewBox="-70 0 520 425">
                                 <path
@@ -91,11 +90,6 @@ function Home() {
             </div>
         </section>
     )
-}
-
-const asd = {
-    kejero: 'developer',
-
 }
 
 export default Home;

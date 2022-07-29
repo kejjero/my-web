@@ -6,7 +6,7 @@
   height: 40px;
   @include flex-center-between;
   position: fixed;
-  z-index: 100;
+  z-index: 1000;
 
   &__wrapper {
     padding: 0 20px;
