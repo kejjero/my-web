@@ -14,13 +14,13 @@ function Home({setOpenPopupEmail, setSuccessCopyEmail, setOpenPopupCooperation})
             <div className="intro__text-wrapper">
                 <h1>Петерс Максим</h1>
                 <p>Frontend Developer</p>
-                <Button
-                    variant="outlined"
-                    startIcon={<SendIcon/>}
-                    onClick={() => setOpenPopupCooperation(true)}
-                >
-                    Сотрудничество
-                </Button>
+                {/*<Button*/}
+                {/*    variant="outlined"*/}
+                {/*    startIcon={<SendIcon/>}*/}
+                {/*    onClick={() => setOpenPopupCooperation(true)}*/}
+                {/*>*/}
+                {/*    Сотрудничество*/}
+                {/*</Button>*/}
                 <ul>
                     <li>
                         <a href="https://github.com/kejjero" target="_blank">
