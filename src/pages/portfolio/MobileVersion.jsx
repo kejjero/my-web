@@ -1,5 +1,5 @@
 import {Chip} from "@mui/material";
-import work1 from "../../images/mac-mars.jpg"
+import work1 from "../../images/work-mars.png"
 import work2 from '../../images/nedelka.jpeg'
 import work3 from '../../images/mesto.jpeg'
 import typescript from "../../images/skills/typescript.svg"

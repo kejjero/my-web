@@ -1,5 +1,5 @@
-import {Chip} from "@mui/material";
-import work1 from "../../images/mac-mars.jpg"
+import {Button, Chip, IconButton} from "@mui/material";
+import work1 from "../../images/work-mars.png"
 import work2 from '../../images/nedelka.jpeg'
 import work3 from '../../images/mesto.jpeg'
 import typescript from "../../images/skills/typescript.svg"
@@ -18,14 +18,37 @@ import nodejs from '../../images/skills/nodejs.svg'
 import express from '../../images/skills/express.svg'
 import axios from "../../images/skills/axios.svg";
 import materialUi from "../../images/skills/material-ui.svg";
+import ArrowForwardIcon from '@mui/icons-material/ArrowForward';
+import {Link} from "react-router-dom";
+import Work from "../../components/works/Work";
+import Marsik from "../../components/works/Marsik";
+import Nedelka from "../../components/works/Nedelka";
 
 function DesktopVersion() {
+    const styleButtonOpen = {
+        position: 'absolute',
+        zIndex: '100',
+        marginLeft: 'auto',
+        marginRight: 'auto',
+        height: '100%',
+        left: '0',
+        right: '0',
+        textAlign: 'center',
+        color: '#fff'
+    }
+
     return(
         <ul className="portfolio__works">
             <li className="portfolio__work">
-                <div className="portfolio__preview">
+                <Link to={`/portfolio/work/${1}`} className="portfolio__preview">
+                    <div className="portfolio__preview-overlay">
+                        <Button
+                            color="primary"
+                            sx={styleButtonOpen}>
+                        </Button>
+                    </div>
                     <img className="portfolio__image" src={work1} alt="mars"/>
-                </div>
+                </Link>
                 <div className="portfolio__info">
                     <h2 className="portfolio__title">Марсик</h2>
                     <p className="portfolio__description">
@@ -94,9 +117,15 @@ function DesktopVersion() {
                 </div>
             </li>
             <li className="portfolio__work">
-                <div className="portfolio__preview">
+                <Link to={`/portfolio/work/${2}`} className="portfolio__preview">
+                    <div className="portfolio__preview-overlay">
+                        <Button
+                            color="primary"
+                            sx={styleButtonOpen}>
+                        </Button>
+                    </div>
                     <img className="portfolio__image" src={work3} alt="mesto"/>
-                </div>
+                </Link>
                 <div className="portfolio__info">
                     <h2 className="portfolio__title">Mesto</h2>
                     <p className="portfolio__description">
@@ -172,9 +201,15 @@ function DesktopVersion() {
                 </div>
             </li>
             <li className="portfolio__work">
-                <div className="portfolio__preview">
+                <Link to={`/portfolio/work/${3}`} className="portfolio__preview">
+                    <div className="portfolio__preview-overlay">
+                        <Button
+                            color="primary"
+                            sx={styleButtonOpen}>
+                        </Button>
+                    </div>
                     <img className="portfolio__image" src={work2} alt="nedelka"/>
-                </div>
+                </Link>
                 <div className="portfolio__info">
                     <h2 className="portfolio__title">Неделька</h2>
                     <p className="portfolio__description">

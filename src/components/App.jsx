@@ -11,6 +11,7 @@ import PanelList from "./header/PanelList";
 import {useState} from "react";
 import PopupEmail from "./PopupEmail";
 import PopupCooperation from "./PopupCooperation";
+import Work from "./works/Work";
 
 function App() {
     const [isOpenBurger, setIsOpenBurger] = useState();
@@ -47,9 +48,10 @@ function App() {
                             setOpenPopupCooperation={setOpenPopupCooperation}
                            />}/>
                     <Route path="/about" element={<About/>}/>
-                    <Route path="/portfolio" element={<Portfolio/>}/>
+                    <Route path="/portfolio/" element={<Portfolio/>}/>
                     <Route path="/service" element={<Service/>}/>
                     <Route path="/blog" element={<Blog/>}/>
+                    <Route path="/portfolio/work/:workId" element={<Work/>}/>
                 </Routes>
             </main>
             <Footer
